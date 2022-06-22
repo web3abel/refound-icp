@@ -37,7 +37,7 @@ export default function Navbar(props) {
           <Typography variant="h6" noWrap>
             <img
               onClick={() => navigate("/")}
-              alt="Entrepot"
+              alt="Refound"
               src="/logo.jpg"
               style={{ height: 64, cursor: "pointer" }}
             />

@@ -51,7 +51,7 @@ export default function Contact(props) {
             </Grid>
             <Grid item xs={12} sm={12} md={12}>
               <p style={{ textAlign: "center", fontSize: "1.3em" }}>
-                Entrepot.app is developed by refound media. If you need to talk
+                Refound is developed by refound media. If you need to talk
                 to us about anything, you can email us at{" "}
                 <a href="mailto:support@toniqlabs.com">support@toniqlabs.com</a>{" "}
                 or contact us on{" "}
@@ -80,7 +80,7 @@ export default function Contact(props) {
               <h3 className={classes.heading}>Do I need a wallet?</h3>
               <p style={{ fontSize: "1.1em", textAlign: "center" }}>
                 You will need to connect your ICP wallet to buy through
-                Entrepot.app - currently we only support{" "}
+                Refound.app - currently we only support{" "}
                 <a
                   href="https://www.stoicwallet.com"
                   target="_blank"
@@ -112,7 +112,7 @@ export default function Contact(props) {
               <h3 className={classes.heading}>How do I sell an NFT?</h3>
               <p style={{ fontSize: "1.1em", textAlign: "center" }}>
                 Currently, all selling has to be done through StoicWallet. We
-                will look to add support for listing NFTs directly on Entrepot
+                will look to add support for listing NFTs directly on Refound
                 soon.
               </p>
             </Grid>
@@ -136,7 +136,7 @@ export default function Contact(props) {
             <Grid item md={3}>
               <h3 className={classes.heading}>Where can I store my NFTs?</h3>
               <p style={{ fontSize: "1.1em", textAlign: "center" }}>
-                Entrepot currently only supports NFTs using the EXT standard by
+                Refound currently only supports NFTs using the EXT standard by
                 ToniqLabs. Currently this is StoicWallet and PlugWallet.
               </p>
             </Grid>

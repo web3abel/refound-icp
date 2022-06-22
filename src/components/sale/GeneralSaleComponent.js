@@ -219,7 +219,7 @@ export default function GeneralSaleComponent(props) {
                           Buy 1 NFT<br />for {_showListingPrice(price)} ICP
                         </Button>
                       </Grid>
-                      <p><strong>Please note:</strong> All transactions are secured via Entrepot's escrow platform. There are no refunds or returns, once a transaction is made it can not be reversed. Entrepot provides a transaction service only. By clicking one of the buttons above you show acceptance of our <a href="https://docs.google.com/document/d/13aj8of_UXdByGoFdMEbbIyltXMn0TXHiUie2jO-qnNk/edit" target="_blank">Terms of Service</a></p>
+                      <p><strong>Please note:</strong> All transactions are secured via Refound's escrow platform. There are no refunds or returns, once a transaction is made it can not be reversed. Refound provides a transaction service only. By clicking one of the buttons above you show acceptance of our <a href="https://docs.google.com/document/d/13aj8of_UXdByGoFdMEbbIyltXMn0TXHiUie2jO-qnNk/edit" target="_blank" rel="noreferrer">Terms of Service</a></p>
                     </> 
                     
                   </> : ""
@@ -240,7 +240,7 @@ export default function GeneralSaleComponent(props) {
                         </Grid>);
                       })}
                     </Grid>
-                    <p><strong>Please note:</strong> All transactions are secured via Entrepot's escrow platform. There are no refunds or returns, once a transaction is made it can not be reversed. Entrepot provides a transaction service only. By clicking one of the buttons above you show acceptance of our <a href="https://docs.google.com/document/d/13aj8of_UXdByGoFdMEbbIyltXMn0TXHiUie2jO-qnNk/edit" target="_blank">Terms of Service</a></p>
+                    <p><strong>Please note:</strong> All transactions are secured via Refound's escrow platform. There are no refunds or returns, once a transaction is made it can not be reversed. Refound provides a transaction service only. By clicking one of the buttons above you show acceptance of our <a href="https://docs.google.com/document/d/13aj8of_UXdByGoFdMEbbIyltXMn0TXHiUie2jO-qnNk/edit" target="_blank" rel="noreferrer">Terms of Service</a></p>
                     
                   </> :
                   <>

@@ -74,7 +74,7 @@ export default function Entrepot(props) {
           <Typography variant="h6" noWrap>
             <img
               onClick={() => changeRoute('home')}
-              alt="Entrepot"
+              alt="Refound"
               src="/logo.jpg"
               style={{ height: 64, cursor: 'pointer' }}
             />

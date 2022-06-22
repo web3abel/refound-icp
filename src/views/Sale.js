@@ -137,7 +137,7 @@ export default function Sale(props) {
               })
             }
           </Grid>
-          <h1 className={classes.heading}>Launch your NFT with Entrepot</h1>
+          <h1 className={classes.heading}>Launch your Front Line Photo NFT with Refound</h1>
           <p
             style={{
               textAlign: "center",
