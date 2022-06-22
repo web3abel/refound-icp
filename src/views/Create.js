@@ -67,29 +67,42 @@ export default function Create(props) {
         >
           <Grid container spacing={2}>
             <Grid item xs={12} sm={12} md={12}>
-              <h1 style={{ textAlign: "center" }}>Take ownership of the media you already create!</h1>
+              <h1 style={{ textAlign: "center" }}>
+                Take ownership of the media you already create!
+              </h1>
+              <ul style={{ paddingLeft: "20%" }}>
+                <li>
+                  <p style={{ textAlign: "left", fontSize: "1.3em" }}>
+                    Mint Front Line Photo NFTs through mobile-first solutions (mobile web and SMS uploads)
+                  </p>
+                </li>
+                <li>
+                  <p style={{ textAlign: "left", fontSize: "1.3em" }}>
+                    Add beneficiary wallets in case of an End of Life situation
+                  </p>
+                </li>
+                <li>
+                  <p style={{ textAlign: "left", fontSize: "1.3em" }}>
+                    Get paid in <bold>$ICP</bold> by news corporations and
+                    individuals for your content
+                  </p>
+                </li>
+              </ul>
             </Grid>
             <Grid item xs={12} sm={12} md={12}>
               <p style={{ textAlign: "center", fontSize: "1.3em" }}>
                 If you would like to launch a collection of Front Line NFTS
-                please apply by filling out the form below, or ask us questions in our discord. 
+                please apply by filling out the form below, or ask us questions
+                in our discord.
               </p>
               <Grid container spacing={2} style={{ paddingBottom: 20 }}>
                 <Grid item xs={12} sm={6} style={{ textAlign: "right" }}>
-                  <Button
-                    size="large"
-                    variant="outlined"
-                    href="/"
-                  >
+                  <Button size="large" variant="outlined" href="/">
                     Application Form
                   </Button>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <Button
-                    size="large"
-                    variant="outlined"
-                    href="/"
-                  >
+                  <Button size="large" variant="outlined" href="/">
                     Join our Discord
                   </Button>
                 </Grid>
@@ -97,9 +110,7 @@ export default function Create(props) {
             </Grid>
           </Grid>
           <Features />
-          <Journalists
-            classes={classes}
-          />
+          <Journalists classes={classes} />
         </div>
       </div>
     </>
