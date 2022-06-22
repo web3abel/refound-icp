@@ -255,7 +255,7 @@ export default function Home(props) {
             ""
           )}
           <h1 className={classes.heading}>
-            Mint media back to life on <span>refound</span>
+            Mint the art of journalism back to life on <span>refound</span>
           </h1>
           <p
             style={{
@@ -296,6 +296,7 @@ export default function Home(props) {
                         <Button
                           onClick={(ev) => {
                             ev.stopPropagation();
+                            alert("Congrats! You've purchased this front line NFT!")
                           }}
                           onMouseDown={(ev) => ev.stopPropagation()}
                           variant="contained"

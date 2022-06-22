@@ -32,8 +32,8 @@ export default function Features(props) {
         <div className={classes.center}>
           <img
             style={{ width: 100 }}
-            alt="Real Journalists"
-            src="/icon/artist.png"
+            alt="Photography"
+            src="/icon/photography.png"
           />
           <h2>Real Journalists</h2>
           <p style={{ fontSize: "1.1em", textAlign: "center" }}>

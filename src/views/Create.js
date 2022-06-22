@@ -67,24 +67,19 @@ export default function Create(props) {
         >
           <Grid container spacing={2}>
             <Grid item xs={12} sm={12} md={12}>
-              <h1 style={{ textAlign: "center" }}>Create, mint, release!</h1>
+              <h1 style={{ textAlign: "center" }}>Take ownership of the media you already create!</h1>
             </Grid>
             <Grid item xs={12} sm={12} md={12}>
               <p style={{ textAlign: "center", fontSize: "1.3em" }}>
-                If you would like to release your own collection of NFTs on the
-                Entrepot.app marketplace then please complete the following
-                Application form. Entrepot utilizes a community driven approach
-                to project selection on the launchpad. Applications for launch
-                are automatically shared publicly in our discord for community
-                review and feedback.
+                If you would like to launch a collection of Front Line NFTS
+                please apply by filling out the form below, or ask us questions in our discord. 
               </p>
               <Grid container spacing={2} style={{ paddingBottom: 20 }}>
                 <Grid item xs={12} sm={6} style={{ textAlign: "right" }}>
                   <Button
                     size="large"
                     variant="outlined"
-                    target="_blank"
-                    href="https://entrepot-launchpad.paperform.co/"
+                    href="/"
                   >
                     Application Form
                   </Button>
@@ -93,8 +88,7 @@ export default function Create(props) {
                   <Button
                     size="large"
                     variant="outlined"
-                    target="_blank"
-                    href="https://discord.gg/toniqlabs"
+                    href="/"
                   >
                     Join our Discord
                   </Button>
