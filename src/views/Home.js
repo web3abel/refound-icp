@@ -55,19 +55,19 @@ const useStyles = makeStyles((theme) => ({
 export const Journalists = ({classes}) => {
   var cards = [
     {
-      title: "Palestine",
+      title: "Fatima, Palestine",
       link: "/",
       image: "/collections/photoJ.png",
       content: <></>,
     },
     {
-      title: "Ukraine",
+      title: "Danylo, Ukraine",
       link: "/",
       image: "/collections/ukraineJ.png",
       content: <></>,
     },
     {
-      title: "Mexico",
+      title: "Oscar & Jose, Mexico",
       link: "/",
       image: "/collections/mexJ.jpeg",
       content: <></>,
