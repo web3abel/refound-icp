@@ -231,11 +231,11 @@ export default function Marketplace(props) {
                 if (collection.route === "btcflower") {
                   imageLink = "/collections/ukraine.png";
                   title = "Ukraine";
-                  brief = "Living through War in Ukraine.";
+                  brief = "Living through War in Ukraine";
                 } else if (collection.route === "poked" ) {
                   imageLink = "/collections/palestine.jpeg";
-                  title = "Palestine";
-                  brief = "What it means to be a Palestinian";
+                  title = "Middle East";
+                  brief = "What it means to be a journalist in the Middle East";
                 } else {
                   imageLink = "/collections/mexico.png";
                   title = "Mexico";

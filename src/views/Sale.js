@@ -66,32 +66,32 @@ export default function Sale(props) {
     {
       name: "India",
       image: "/collections/india_upcoming.png",
-      blurb: "blurb blurb blurb",
+      blurb: "COVID situation and equality",
     },
     {
-      name: "Syria, Civil War",
+      name: "Syria",
       image: "/collections/syria_upcoming.png",
-      blurb: "blurb blurb blurb",
+      blurb: "Housing shortage",
     },
     {
       name: "Myanmar, Civil War",
       image: "/collections/myanmar_upcoming.png",
-      blurb: "blurb blurb blurb",
+      blurb: "Rohingya crisis",
     },
     {
       name: "Venezuela",
       image: "/collections/venezuela_upcoming.png",
-      blurb: "blurb blurb blurb",
+      blurb: "Employee strikes",
     },
     {
       name: "Turkey",
       image: "/collections/turkey_upcoming.png",
-      blurb: "blurb blurb blurb",
+      blurb: "Free speech demonstrations",
     },
     {
       name: "Kazakhstan, Civil Unrest",
       image: "/collections/kazakstan_upcoming.png",
-      blurb: "blurb blurb blurb",
+      blurb: "Front-line updates from the capital",
 
     }
 
@@ -119,7 +119,7 @@ export default function Sale(props) {
               .filter((collection, i) => i < 6)
               .map((collection, i) => {
                 return (<Grid key={i} item md={4} style={{ marginBottom: 20 }}>
-                  <Link style={{textDecoration:"none"}} to={"/sale/"+collection.route}>
+                  <Link style={{textDecoration:"none"}} to={"/sale"}>
                     <Card className={classes.root}>
                       <CardMedia
                         className={classes.media}
