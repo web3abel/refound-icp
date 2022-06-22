@@ -487,6 +487,17 @@ export default function NFT(props) {
               )}
             </> : ""
           }
+          <Button
+            onClick={ev => {
+              ev.stopPropagation();
+              buy();
+            }}
+            onMouseDown={ev => ev.stopPropagation()}
+            variant="contained"
+            size="small"
+            color="primary"
+            style={{ marginRight: "auto", backgroundColor: "#003240", color: "white" }}
+          >Buy Now</Button>
           <Favourite refresher={props.faveRefresher} identity={props.identity} loggedIn={props.loggedIn} tokenid={tokenid} />
         </CardActions>}
       </Card>

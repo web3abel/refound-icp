@@ -63,8 +63,8 @@ export default function CollectionDetails(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (<>
-    <div className={classes.banner} style={{background:(typeof collection.banner != 'undefined' && collection.banner ? "url('"+collection.banner+"')" : "#aaa")}}>
-      <Avatar style={{top:150,margin:"0 auto",border:"10px solid white",height:120, width:120}} src={(typeof collection.avatar != 'undefiend' && collection.avatar ? collection.avatar : "/collections/"+collection.canister+".jpg")} />
+    <div className={classes.banner} style={{background:"#aaa"}}>
+      <Avatar style={{top:150,margin:"0 auto",border:"10px solid white",height:120, width:120}} src={"/collections/hero.png"} />
     </div>
     <Grid className={classes.stats} container direction="row" alignItems="center" spacing={2}>
       <Grid item md={4} xs={12} style={{textAlign:"center"}}>
@@ -98,10 +98,10 @@ export default function CollectionDetails(props) {
       </Grid>
     </Grid>
     <div style={{width:"100%", maxWidth:"760px", margin:"0 auto"}}>
-      <h1>{collection.name}</h1>
-        {size ? <h4 style={{marginTop:-20}}>Collection of {numberWithCommas(size)}</h4> : ""}
+      <h1>Front Lines Photography (2022)</h1>
+        {size ? <h4 style={{marginTop:-20}}>Collection of 7</h4> : ""}
       {/*collection?.canister == "oeee4-qaaaa-aaaak-qaaeq-cai" ? <Alert severity="error"><strong>There seems to be an issue with the <a href="https://dashboard.internetcomputer.org/subnet/opn46-zyspe-hhmyp-4zu6u-7sbrh-dok77-m7dch-im62f-vyimr-a3n2c-4ae" target="_blank">oopn46-zyspe... subnet</a> which is causing issues with this collection.</strong></Alert> : ""*/}
-      <div ref={e => { setBlurbElement(e); }} style={{...(collapseBlurb && !isBlurbOpen ? {maxHeight:110, wordBreak: "break-word", WebkitMask : "linear-gradient(rgb(255, 255, 255) 45%, transparent)"} : {}), overflow:"hidden",fontSize: "1.2em" }} dangerouslySetInnerHTML={{ __html : collection?.blurb }}></div>
+      <div ref={e => { setBlurbElement("Andy Carvin eHow column-inch 5 praise erasers & how to avoid them Fuego filters Steve Jobs crowdfunding tweets church of the savvy Romenesko, David Cohn Politics & Socks page Like button content is king Instagram layoffs MinnPost newspaper strike AP API, What Would Google Do trolls Jay Rosen writing meme if the news is that important, it'll find me attracting young readers Frontline kitchen table of the future. afternoon paper Marshall McLuhan hyperlocal filters Snarkmarket bloggers in their mother's basement iPad app put the paper to bed gutter community, Project Thunderdome TBD lede digital circulation strategy engagement masthead abundance hyperhyperhyperlocal Alberto Ibarguen, Aron Pilhofer Frontline Romenesko hyperhyperlocal perfect for starting a campfire try PR nut graf the notional night cops reporter in Des Moines."); }} style={{...(collapseBlurb && !isBlurbOpen ? {maxHeight:110, wordBreak: "break-word", WebkitMask : "linear-gradient(rgb(255, 255, 255) 45%, transparent)"} : {}), overflow:"hidden",fontSize: "1.2em" }} dangerouslySetInnerHTML={{ __html : "Andy Carvin eHow column-inch 5 praise erasers & how to avoid them Fuego filters Steve Jobs crowdfunding tweets church of the savvy Romenesko, David Cohn Politics & Socks page Like button content is king Instagram layoffs MinnPost newspaper strike AP API, What Would Google Do trolls Jay Rosen writing meme if the news is that important, it'll find me attracting young readers Frontline kitchen table of the future. afternoon paper Marshall McLuhan hyperlocal filters Snarkmarket bloggers in their mother's basement iPad app put the paper to bed gutter community, Project Thunderdome TBD lede digital circulation strategy engagement masthead abundance hyperhyperhyperlocal Alberto Ibarguen, Aron Pilhofer Frontline Romenesko hyperhyperlocal perfect for starting a campfire try PR nut graf the notional night cops reporter in Des Moines." }}></div>
       {collapseBlurb ? (
       <Button fullWidth endIcon={(!isBlurbOpen ? <ExpandMoreIcon /> : <ExpandLessIcon />)} onClick={() => setIsBlurbOpen(!isBlurbOpen)}></Button>
       ) : ""}

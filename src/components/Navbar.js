@@ -55,7 +55,7 @@ export default function Navbar(props) {
               }
               color="inherit"
             >
-              Countdowns
+              Upcoming Drops
             </Button>
             <Button
               onClick={() => {
@@ -135,7 +135,7 @@ export default function Navbar(props) {
                   }}
                   color="inherit"
                 >
-                  Countdowns
+                  Upcoming Drops
                 </Button>
                 <Button
                   startIcon={

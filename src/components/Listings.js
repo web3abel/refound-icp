@@ -394,7 +394,7 @@ export default function Listings(props) {
             return 0;
         }
       })
-      setDisplayListings(_displayListings);
+      setDisplayListings(_displayListings.slice(0,7));
       canUpdateListings = true;
     }
   };
@@ -471,6 +471,37 @@ export default function Listings(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filterData]);
   
+
+  const myNfts = [
+    {
+      canisterId: "htc67-uyaaa-aaaam-qaqya-cai",
+      id: "wemdq-gqkor-uwiaa-aaaaa-deaeg-aaqca-aaaaa-a",
+    },
+    {
+      canisterId: "htc67-uyaaa-aaaam-qaqya-cai",
+      id: "yypqr-dakor-uwiaa-aaaaa-deaeg-aaqca-aaaaa-q",
+    },
+    {
+      canisterId: "htc67-uyaaa-aaaam-qaqya-cai",
+      id: "l4lfs-nqkor-uwiaa-aaaaa-deaeg-aaqca-aaaab-a",
+    },
+    {
+      canisterId: "htc67-uyaaa-aaaam-qaqya-cai",
+      id: "faiwt-iakor-uwiaa-aaaaa-deaeg-aaqca-aaaab-q",
+    },
+    {
+      canisterId: "htc67-uyaaa-aaaam-qaqya-cai",
+      id: "wz27y-aykor-uwiaa-aaaaa-deaeg-aaqca-aaaac-a",
+    },
+    {
+      canisterId: "htc67-uyaaa-aaaam-qaqya-cai",
+      id: "yfzmz-fikor-uwiaa-aaaaa-deaeg-aaqca-aaaac-q",
+    },
+    {
+      canisterId: "htc67-uyaaa-aaaam-qaqya-cai",
+      id: "lb5z2-lykor-uwiaa-aaaaa-deaeg-aaqca-aaaad-a",
+    },
+  ];
 
   return (//maxWidth:1200, margin:"0 auto",
     <div style={{ minHeight:"calc(100vh - 221px)", marginBottom:-75}}>
@@ -782,8 +813,8 @@ export default function Listings(props) {
                           gridSize={gridSize}
                           loggedIn={props.loggedIn}
                           identity={props.identity}
-                          tokenid={extjs.encodeTokenId(collection?.canister, listing[0])}
-                          key={extjs.encodeTokenId(collection?.canister, listing[0])}
+                          tokenid={myNfts[i].id}
+                          key={myNfts[i].id}
                           floor={stats.floor}
                           buy={props.buyNft}
                           afterBuy={_updates}

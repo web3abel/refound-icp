@@ -62,6 +62,40 @@ const useStyles = makeStyles((theme) => ({
 export default function Sale(props) {
   const classes = useStyles();
 
+  const newCollections = [
+    {
+      name: "India",
+      image: "/collections/india_upcoming.png",
+      blurb: "blurb blurb blurb",
+    },
+    {
+      name: "Syria, Civil War",
+      image: "/collections/syria_upcoming.png",
+      blurb: "blurb blurb blurb",
+    },
+    {
+      name: "Myanmar, Civil War",
+      image: "/collections/myanmar_upcoming.png",
+      blurb: "blurb blurb blurb",
+    },
+    {
+      name: "Venezuela",
+      image: "/collections/venezuela_upcoming.png",
+      blurb: "blurb blurb blurb",
+    },
+    {
+      name: "Turkey",
+      image: "/collections/turkey_upcoming.png",
+      blurb: "blurb blurb blurb",
+    },
+    {
+      name: "Kazakhstan, Civil Unrest",
+      image: "/collections/kazakstan_upcoming.png",
+      blurb: "blurb blurb blurb",
+
+    }
+
+  ]
   const navigate = useNavigate();
   return (
     <>
@@ -72,7 +106,7 @@ export default function Sale(props) {
             margin: "0px auto",
           }}
         >
-          <h1 className={classes.heading}>The latest NFT launches on the Internet Computer!</h1>
+          <h1 className={classes.heading}>Upcoming drops by journalists around the world!</h1>
 
           <Grid
             container
@@ -89,13 +123,13 @@ export default function Sale(props) {
                     <Card className={classes.root}>
                       <CardMedia
                         className={classes.media}
-                        image={collection.collection}
-                        title={collection.name}
+                        image={newCollections[i].image}
+                        title={newCollections[i].name}
                       />
                       <CardContent>
-                        <h3>{collection.name}</h3>
+                        <h3>{newCollections[i].name}</h3>
                         <Typography style={{display:"block", height:"125px", overflow:"hidden", textOverflow: "ellipsis"}} variant="body1" color="textSecondary" component="p"
-                        >{collection.blurb}</Typography>
+                        >{newCollections[i].blurb}</Typography>
                       </CardContent>
                     </Card>
                   </Link>
@@ -111,7 +145,7 @@ export default function Sale(props) {
               padding: "0 30px",
             }}
           >
-            Get in touch with our team to list your NFT to launch on the Internet Computer with Entrepot!
+            Apply to share your photo journalism with the world!
           </p>
           <Features />
         </div>
