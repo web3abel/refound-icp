@@ -691,7 +691,7 @@ export default function App() {
   const footer = (
   <div className={classes.footer}>
     <Typography variant="body1">
-      Developed by refound media &copy; All rights reserved 2021<br /><a href="https://docs.google.com/document/d/13aj8of_UXdByGoFdMEbbIyltXMn0TXHiUie2jO-qnNk/edit" target="_blank" rel="noreferrer">Terms of Service</a>
+      Developed by refound media &copy; All rights reserved 2022<br /><a href="https://docs.google.com/document/d/13aj8of_UXdByGoFdMEbbIyltXMn0TXHiUie2jO-qnNk/edit" target="_blank" rel="noreferrer">Terms of Service</a>
     </Typography>
   </div>);
   
