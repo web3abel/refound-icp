@@ -2,5 +2,7 @@
 
 steps to build locally:
 
-yarn install
-yarn start
+
+```yarn install```
+
+```yarn start```
