@@ -269,12 +269,13 @@ const useStyles = makeStyles((theme) => ({
   },
   logoRepeat: {
     color: "black",
-    backgroundImage : "url('/icon/sunflower-b.png')",
+    backgroundImage : "url('/icon/sunflower_bw.png')",
     backgroundRepeat : "no-repeat",
     backgroundSize : "20px",
     backgroundPosition: "90% 49%",
     "&:hover, &.selected": {
-      backgroundImage : "url('/icon/sunflower.png')",
+      backgroundImage : "url('/icon/sunflower_color.png')",
+      color: "#0070f3",
     },
   },
   sale: {
