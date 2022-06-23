@@ -927,14 +927,14 @@ export default function App() {
                   confirm={confirm}
                   loader={loader} balance={balance} identity={identity}  account={accounts.length > 0 ? accounts[currentAccount] : false} logout={logout} login={login} collections={collections} collection={false} currentAccount={currentAccount} changeAccount={setCurrentAccount} accounts={accounts}
                 />} />
-              <Route path="/contact" exact element={
+              {/* <Route path="/contact" exact element={
                 <Contact
                   error={error}
                   error={error}
                   alert={alert}
                   confirm={confirm}
                   loader={loader} setBalance={setBalance} identity={identity}  account={accounts.length > 0 ? accounts[currentAccount] : false} logout={logout} login={login} collections={collections} collection={false} currentAccount={currentAccount} changeAccount={setCurrentAccount} accounts={accounts}
-                />} />
+                />} /> */}
               <Route path="/" exact element={
                 <Home collections={collections} error={error} alert={alert} confirm={confirm} loader={loader} />} />
               <Route path="/sale" exact element={

@@ -69,9 +69,9 @@ export default function Sale(props) {
       blurb: "COVID situation and equality",
     },
     {
-      name: "Syria",
-      image: "/collections/syria_upcoming.png",
-      blurb: "Housing shortage",
+      name: "Afghanistan",
+      image: "/collections/afghanistan.png",
+      blurb: "June 2022 Earthquake",
     },
     {
       name: "Myanmar, Civil War",
@@ -106,38 +106,50 @@ export default function Sale(props) {
             margin: "0px auto",
           }}
         >
-          <h1 className={classes.heading}>Upcoming drops by journalists around the world!</h1>
+          <h1 className={classes.heading}>
+            Upcoming drops by journalists around the world!
+          </h1>
 
-          <Grid
-            container
-            spacing={2}
-            direction="row"
-            alignItems="center"
-          >
-            {
-              props.collections.filter(a => typeof a.sale != 'undefined' && a.sale == true)
+          <Grid container spacing={2} direction="row" alignItems="center">
+            {props.collections
+              .filter((a) => typeof a.sale != "undefined" && a.sale == true)
               .filter((collection, i) => i < 6)
               .map((collection, i) => {
-                return (<Grid key={i} item md={4} style={{ marginBottom: 20 }}>
-                  <Link style={{textDecoration:"none"}} to={"/sale"}>
-                    <Card className={classes.root}>
-                      <CardMedia
-                        className={classes.media}
-                        image={newCollections[i].image}
-                        title={newCollections[i].name}
-                      />
-                      <CardContent>
-                        <h3>{newCollections[i].name}</h3>
-                        <Typography style={{display:"block", height:"125px", overflow:"hidden", textOverflow: "ellipsis"}} variant="body1" color="textSecondary" component="p"
-                        >{newCollections[i].blurb}</Typography>
-                      </CardContent>
-                    </Card>
-                  </Link>
-                </Grid>);
-              })
-            }
+                return (
+                  <Grid key={i} item md={4} style={{ marginBottom: 20 }}>
+                    <Link style={{ textDecoration: "none" }} to={"/sale"}>
+                      <Card className={classes.root}>
+                        <CardMedia
+                          className={classes.media}
+                          image={newCollections[i].image}
+                          title={newCollections[i].name}
+                        />
+                        <CardContent>
+                          <h3>{newCollections[i].name}</h3>
+                          <Typography
+                            style={{
+                              display: "block",
+                              height: "125px",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                            }}
+                            variant="body1"
+                            color="textSecondary"
+                            component="p"
+                          >
+                            {newCollections[i].blurb}
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                    </Link>
+                  </Grid>
+                );
+              })}
           </Grid>
-          <h1 className={classes.heading}>Launch your Front Line Photo NFT with Refound</h1>
+          <h1 className={classes.heading}>
+            Launch your Front Line Photo NFT with Refound
+          </h1>
+          <Features />
           <p
             style={{
               textAlign: "center",
@@ -147,7 +159,16 @@ export default function Sale(props) {
           >
             Apply to share your photo journalism with the world!
           </p>
-          <Features />
+          <Button
+            className={classes.marketBtn}
+            fullWidth
+            variant={"outlined"}
+            onClick={() => navigate(`/create`)}
+            color={"primary"}
+            style={{ fontWeight: "bold", margin: "20px auto" }}
+          >
+            Apply To Create
+          </Button>
         </div>
       </div>
     </>

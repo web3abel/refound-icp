@@ -269,6 +269,8 @@ export default function Home(props) {
             swiftly, raise awareness, and sell directly to businesses, with sale
             proceeds going to customizable beneficiaries.
           </p>
+          <Features />
+          <hr />
           <h1 className={classes.heading}>Photography</h1>
           <Grid
             container
@@ -296,7 +298,9 @@ export default function Home(props) {
                         <Button
                           onClick={(ev) => {
                             ev.stopPropagation();
-                            alert("Congrats! You've purchased this front line NFT!")
+                            alert(
+                              "Congrats! You've purchased this front line NFT!"
+                            );
                           }}
                           onMouseDown={(ev) => ev.stopPropagation()}
                           variant="contained"
@@ -345,7 +349,16 @@ export default function Home(props) {
           >
             Explore The Front Lines
           </Button>
-          <Journalists {...{classes: {heading: classes.heading, root: classes.root, media: classes.media}}} />
+          <hr />
+          <Journalists
+            {...{
+              classes: {
+                heading: classes.heading,
+                root: classes.root,
+                media: classes.media,
+              },
+            }}
+          />
           <Button
             className={classes.marketBtn}
             fullWidth
