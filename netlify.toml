@@ -1,5 +1,5 @@
 [[redirects]]
     from = "/*"
-    to = "https://www.refound.media/:splat"
+    to = "www.refound.media/:splat"
     status = 301
     force = true
