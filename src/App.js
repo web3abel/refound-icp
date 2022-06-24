@@ -699,7 +699,6 @@ export default function App() {
     <>
       {appLoaded ? (
         <>
-          <Redirect to="https://www.refound.media/" />
           <Navbar
             view={rootPage}
             processPayments={processPayments}
@@ -718,6 +717,9 @@ export default function App() {
           <main className={classes.content}>
             <div className={classes.inner}>
               <Routes>
+                <Route exact path="/">
+                  <Redirect to="https://www.refound.media/" />
+                </Route>
                 <Route
                   path="/marketplace/asset/:tokenid"
                   exact
