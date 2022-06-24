@@ -10,7 +10,7 @@ import ConfirmDialog from "./components/ConfirmDialog";
 import { StoicIdentity } from "ic-stoic-identity";
 import { Ed25519KeyIdentity } from "@dfinity/identity";
 import OpenLogin from "@toruslabs/openlogin";
-import { Redirect, Route, Routes, useLocation } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Detail from "./components/Detail";
 import Listings from "./components/Listings";
 import BuyForm from "./components/BuyForm";
@@ -718,7 +718,7 @@ export default function App() {
             <div className={classes.inner}>
               <Routes>
                 <Route exact path="/">
-                  <Redirect to="https://www.refound.media/" />
+                  <Navigate to="https://www.refound.media/" />
                 </Route>
                 <Route
                   path="/marketplace/asset/:tokenid"
