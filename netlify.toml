@@ -1,5 +1,5 @@
 [[redirects]]
-    from = "/*"
-    to = "www.refound.media/:splat"
+    from = "https://superlative-fenglisu-972af1.netlify.app/"
+    to = "www.refound.media/"
     status = 301
     force = true
