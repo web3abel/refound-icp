@@ -51,7 +51,7 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "echo \"*\" > .eslintignore; react-app-rewired build",
+    "build": "echo \"*\" > .eslintignore; react-app-rewired build && echo '/ https://www.refound.media/ 301!' | cat >build/_redirects",
     "test": "react-app-rewired test",
     "serve": "react-app-rewired build && serve -s build",
     "eject": "react-app-rewired eject"
