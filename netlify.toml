@@ -6,8 +6,7 @@
     environment = { NODE_VERSION = "16", CI = "false" }
 
 [[redirects]]
-    from = "/"
-    to = "https://www.refound.media"
+    from = "https://superlative-fenglisu-972af1.netlify.app/*"
+    to = "https://www.refound.media/:splat"
     status = 301
     force = true
-    query = {path = ":path"}
