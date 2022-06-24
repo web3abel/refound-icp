@@ -7,6 +7,6 @@
 
 [[redirects]]
     from = "https://superlative-fenglisu-972af1.netlify.app/*"
-    to = "https://www.refound.media/:splat"
+    to = "https://refound.media/:splat"
     status = 301
     force = true
