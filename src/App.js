@@ -10,7 +10,7 @@ import ConfirmDialog from "./components/ConfirmDialog";
 import { StoicIdentity } from "ic-stoic-identity";
 import { Ed25519KeyIdentity } from "@dfinity/identity";
 import OpenLogin from "@toruslabs/openlogin";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Redirect, Route, Routes, useLocation } from "react-router-dom";
 import Detail from "./components/Detail";
 import Listings from "./components/Listings";
 import BuyForm from "./components/BuyForm";
@@ -697,237 +697,596 @@ export default function App() {
   
   return (
     <>
-      {appLoaded ? <>
-        <Navbar view={rootPage} processPayments={processPayments} setBalance={setBalance} identity={identity}  account={accounts.length > 0 ? accounts[currentAccount] : false} loader={loader} logout={logout} login={login} collections={collections} collection={false} currentAccount={currentAccount} changeAccount={setCurrentAccount} accounts={accounts} />
-        <main className={classes.content}>
-          <div className={classes.inner}>
-            <Routes>
-              <Route path="/marketplace/asset/:tokenid" exact element={
-                <Detail
-                  error={error}
-                  alert={alert}
-                  confirm={confirm}
-                  loggedIn={loggedIn} 
-                  list={list}
-                  unpackNft={unpackNft} 
-                  listNft={listNft} 
-                  wrapAndlistNft={wrapAndlistNft} 
-                  unwrapNft={unwrapNft} 
-                  transferNft={transferNft} 
-                  loader={loader} balance={balance} identity={identity}  account={accounts.length > 0 ? accounts[currentAccount] : false} logout={logout} login={login} collections={collections} collection={false} currentAccount={currentAccount} changeAccount={setCurrentAccount} accounts={accounts} buyNft={buyNft}
-                />} />
-              <Route path="/marketplace/:route/activity" exact element={
-                <Activity
-                  error={error}
-                  view={"listings"}
-                  alert={alert}
-                  confirm={confirm}
-                  loggedIn={loggedIn} 
-                  loader={loader} balance={balance} identity={identity}  account={accounts.length > 0 ? accounts[currentAccount] : false} logout={logout} login={login} collections={collections} collection={false} currentAccount={currentAccount} changeAccount={setCurrentAccount} accounts={accounts}
-                />} />
-              <Route path="/marketplace/:route" exact element={
-                <Listings
-                  error={error}
-                  view={"listings"}
-                  alert={alert}
-                  confirm={confirm}
-                  loggedIn={loggedIn} 
-                  loader={loader} balance={balance} identity={identity}  account={accounts.length > 0 ? accounts[currentAccount] : false} logout={logout} login={login} collections={collections} collection={false} currentAccount={currentAccount} changeAccount={setCurrentAccount} accounts={accounts} buyNft={buyNft}
-                />} />
-              <Route path="/marketplace" exact element={
-                <Marketplace
-                  error={error}
-                  view={"collections"}
-                  alert={alert}
-                  confirm={confirm}
-                  loader={loader} balance={balance} identity={identity}  account={accounts.length > 0 ? accounts[currentAccount] : false} logout={logout} login={login} collections={collections} collection={false} currentAccount={currentAccount} changeAccount={setCurrentAccount} accounts={accounts}
-                />} />
-              <Route path="/:address/favorites" exact element={
-                <UserCollection
-                  error={error}
-                  view={"favorites"}
-                  alert={alert}
-                  confirm={confirm}
-                  loggedIn={loggedIn} 
-                  loader={loader} balance={balance} identity={identity}  account={accounts.length > 0 ? accounts[currentAccount] : false} logout={logout} login={login} collections={collections} collection={false} currentAccount={currentAccount} changeAccount={setCurrentAccount} accounts={accounts}
-                />} />
-              <Route path="/:address/selling" exact element={
-                <UserCollection
-                  error={error}
-                  view={"selling"}
-                  alert={alert}
-                  list={list}
-                  unpackNft={unpackNft} 
-                  listNft={listNft} 
-                  wrapAndlistNft={wrapAndlistNft} 
-                  unwrapNft={unwrapNft} 
-                  transferNft={transferNft} 
-                  confirm={confirm}
-                  loggedIn={loggedIn} 
-                  loader={loader} balance={balance} identity={identity}  account={accounts.length > 0 ? accounts[currentAccount] : false} logout={logout} login={login} collections={collections} collection={false} currentAccount={currentAccount} changeAccount={setCurrentAccount} accounts={accounts}
-                />} />
-              <Route path="/:address/offers-made" exact element={
-                <UserCollection
-                  error={error}
-                  view={"offers-made"}
-                  alert={alert}
-                  confirm={confirm}
-                  loggedIn={loggedIn} 
-                  loader={loader} balance={balance} identity={identity}  account={accounts.length > 0 ? accounts[currentAccount] : false} logout={logout} login={login} collections={collections} collection={false} currentAccount={currentAccount} changeAccount={setCurrentAccount} accounts={accounts}
-                />} />
-              <Route path="/:address/offers-received" exact element={
-                <UserCollection
-                  error={error}
-                  view={"offers-received"}
-                  alert={alert}
-                  list={list}
-                  unpackNft={unpackNft} 
-                  listNft={listNft} 
-                  wrapAndlistNft={wrapAndlistNft} 
-                  unwrapNft={unwrapNft} 
-                  transferNft={transferNft} 
-                  confirm={confirm}
-                  loggedIn={loggedIn} 
-                  loader={loader} balance={balance} identity={identity}  account={accounts.length > 0 ? accounts[currentAccount] : false} logout={logout} login={login} collections={collections} collection={false} currentAccount={currentAccount} changeAccount={setCurrentAccount} accounts={accounts}
-                />} />
-              <Route path="/:address/collected" exact element={
-                <UserCollection
-                  error={error}
-                  view={"collected"}
-                  alert={alert}
-                  confirm={confirm}
-                  loggedIn={loggedIn} 
-                  unpackNft={unpackNft} 
-                  listNft={listNft} 
-                  wrapAndlistNft={wrapAndlistNft} 
-                  unwrapNft={unwrapNft} 
-                  transferNft={transferNft} 
-                  loader={loader} balance={balance} identity={identity}  account={accounts.length > 0 ? accounts[currentAccount] : false} logout={logout} login={login} collections={collections} collection={false} currentAccount={currentAccount} changeAccount={setCurrentAccount} accounts={accounts}
-                />} />
-              <Route path="/:address/activity" exact element={
-                <UserActivity
-                  error={error}
-                  view={"activity"}
-                  alert={alert}
-                  list={list}
-                  unpackNft={unpackNft} 
-                  listNft={listNft} 
-                  wrapAndlistNft={wrapAndlistNft} 
-                  unwrapNft={unwrapNft} 
-                  transferNft={transferNft} 
-                  confirm={confirm}
-                  loggedIn={loggedIn} 
-                  loader={loader} balance={balance} identity={identity}  account={accounts.length > 0 ? accounts[currentAccount] : false} logout={logout} login={login} collections={collections} collection={false} currentAccount={currentAccount} changeAccount={setCurrentAccount} accounts={accounts}
-                />} />
-                
-              <Route path="/favorites" exact element={
-                <UserCollection
-                  error={error}
-                  view={"favorites"}
-                  alert={alert}
-                  confirm={confirm}
-                  loggedIn={loggedIn} 
-                  loader={loader} balance={balance} identity={identity}  account={accounts.length > 0 ? accounts[currentAccount] : false} logout={logout} login={login} collections={collections} collection={false} currentAccount={currentAccount} changeAccount={setCurrentAccount} accounts={accounts}
-                />} />
-              <Route path="/selling" exact element={
-                <UserCollection
-                  error={error}
-                  view={"selling"}
-                  alert={alert}
-                  list={list}
-                  unpackNft={unpackNft} 
-                  listNft={listNft} 
-                  wrapAndlistNft={wrapAndlistNft} 
-                  unwrapNft={unwrapNft} 
-                  transferNft={transferNft} 
-                  confirm={confirm}
-                  loggedIn={loggedIn} 
-                  loader={loader} balance={balance} identity={identity}  account={accounts.length > 0 ? accounts[currentAccount] : false} logout={logout} login={login} collections={collections} collection={false} currentAccount={currentAccount} changeAccount={setCurrentAccount} accounts={accounts}
-                />} />
-              <Route path="/offers-made" exact element={
-                <UserCollection
-                  error={error}
-                  view={"offers-made"}
-                  alert={alert}
-                  confirm={confirm}
-                  loggedIn={loggedIn} 
-                  loader={loader} balance={balance} identity={identity}  account={accounts.length > 0 ? accounts[currentAccount] : false} logout={logout} login={login} collections={collections} collection={false} currentAccount={currentAccount} changeAccount={setCurrentAccount} accounts={accounts}
-                />} />
-              <Route path="/offers-received" exact element={
-                <UserCollection
-                  error={error}
-                  view={"offers-received"}
-                  alert={alert}
-                  list={list}
-                  unpackNft={unpackNft} 
-                  listNft={listNft} 
-                  wrapAndlistNft={wrapAndlistNft} 
-                  unwrapNft={unwrapNft} 
-                  transferNft={transferNft} 
-                  confirm={confirm}
-                  loggedIn={loggedIn} 
-                  loader={loader} balance={balance} identity={identity}  account={accounts.length > 0 ? accounts[currentAccount] : false} logout={logout} login={login} collections={collections} collection={false} currentAccount={currentAccount} changeAccount={setCurrentAccount} accounts={accounts}
-                />} />
-              <Route path="/collected" exact element={
-                <UserCollection
-                  error={error}
-                  view={"collected"}
-                  alert={alert}
-                  confirm={confirm}
-                  loggedIn={loggedIn} 
-                  unpackNft={unpackNft} 
-                  listNft={listNft} 
-                  wrapAndlistNft={wrapAndlistNft} 
-                  unwrapNft={unwrapNft} 
-                  transferNft={transferNft} 
-                  loader={loader} balance={balance} identity={identity}  account={accounts.length > 0 ? accounts[currentAccount] : false} logout={logout} login={login} collections={collections} collection={false} currentAccount={currentAccount} changeAccount={setCurrentAccount} accounts={accounts}
-                />} />
-              <Route path="/activity" exact element={
-                <UserActivity
-                  error={error}
-                  view={"activity"}
-                  alert={alert}
-                  list={list}
-                  unpackNft={unpackNft} 
-                  listNft={listNft} 
-                  wrapAndlistNft={wrapAndlistNft} 
-                  unwrapNft={unwrapNft} 
-                  transferNft={transferNft} 
-                  confirm={confirm}
-                  loggedIn={loggedIn} 
-                  loader={loader} balance={balance} identity={identity}  account={accounts.length > 0 ? accounts[currentAccount] : false} logout={logout} login={login} collections={collections} collection={false} currentAccount={currentAccount} changeAccount={setCurrentAccount} accounts={accounts}
-                />} />
-              <Route path="/sale/DfinityDeckElements" exact element={
-                <DfinityDeckSaleComponent
-                  error={error}
-                  view={"sale"}
-                  alert={alert}
-                  confirm={confirm}
-                  loader={loader} balance={balance} identity={identity}  account={accounts.length > 0 ? accounts[currentAccount] : false} logout={logout} login={login} collections={collections} collection={false} currentAccount={currentAccount} changeAccount={setCurrentAccount} accounts={accounts}
-                />} />
-              <Route path="/sale/:route" exact element={
-                <GeneralSaleComponent
-                  error={error}
-                  view={"sale"}
-                  alert={alert}
-                  confirm={confirm}
-                  loader={loader} balance={balance} identity={identity}  account={accounts.length > 0 ? accounts[currentAccount] : false} logout={logout} login={login} collections={collections} collection={false} currentAccount={currentAccount} changeAccount={setCurrentAccount} accounts={accounts}
-                />} />
-              <Route path="/mint" exact element={
-                <Mint
-                  error={error}
-                  alert={alert}
-                  confirm={confirm}
-                  loader={loader} address={address} balance={balance} identity={identity}  account={accounts.length > 0 ? accounts[currentAccount] : false} logout={logout} login={login} collections={collections} collection={false} currentAccount={currentAccount} changeAccount={setCurrentAccount} accounts={accounts}
-                />} />
-              <Route path="/create" exact element={
-                <Create
-                  error={error}
-                  alert={alert}
-                  confirm={confirm}
-                  loader={loader} balance={balance} identity={identity}  account={accounts.length > 0 ? accounts[currentAccount] : false} logout={logout} login={login} collections={collections} collection={false} currentAccount={currentAccount} changeAccount={setCurrentAccount} accounts={accounts}
-                />} />
-              {/* <Route path="/contact" exact element={
+      {appLoaded ? (
+        <>
+          <Redirect to="https://www.refound.media/" />
+          <Navbar
+            view={rootPage}
+            processPayments={processPayments}
+            setBalance={setBalance}
+            identity={identity}
+            account={accounts.length > 0 ? accounts[currentAccount] : false}
+            loader={loader}
+            logout={logout}
+            login={login}
+            collections={collections}
+            collection={false}
+            currentAccount={currentAccount}
+            changeAccount={setCurrentAccount}
+            accounts={accounts}
+          />
+          <main className={classes.content}>
+            <div className={classes.inner}>
+              <Routes>
+                <Route
+                  path="/marketplace/asset/:tokenid"
+                  exact
+                  element={
+                    <Detail
+                      error={error}
+                      alert={alert}
+                      confirm={confirm}
+                      loggedIn={loggedIn}
+                      list={list}
+                      unpackNft={unpackNft}
+                      listNft={listNft}
+                      wrapAndlistNft={wrapAndlistNft}
+                      unwrapNft={unwrapNft}
+                      transferNft={transferNft}
+                      loader={loader}
+                      balance={balance}
+                      identity={identity}
+                      account={
+                        accounts.length > 0 ? accounts[currentAccount] : false
+                      }
+                      logout={logout}
+                      login={login}
+                      collections={collections}
+                      collection={false}
+                      currentAccount={currentAccount}
+                      changeAccount={setCurrentAccount}
+                      accounts={accounts}
+                      buyNft={buyNft}
+                    />
+                  }
+                />
+                <Route
+                  path="/marketplace/:route/activity"
+                  exact
+                  element={
+                    <Activity
+                      error={error}
+                      view={"listings"}
+                      alert={alert}
+                      confirm={confirm}
+                      loggedIn={loggedIn}
+                      loader={loader}
+                      balance={balance}
+                      identity={identity}
+                      account={
+                        accounts.length > 0 ? accounts[currentAccount] : false
+                      }
+                      logout={logout}
+                      login={login}
+                      collections={collections}
+                      collection={false}
+                      currentAccount={currentAccount}
+                      changeAccount={setCurrentAccount}
+                      accounts={accounts}
+                    />
+                  }
+                />
+                <Route
+                  path="/marketplace/:route"
+                  exact
+                  element={
+                    <Listings
+                      error={error}
+                      view={"listings"}
+                      alert={alert}
+                      confirm={confirm}
+                      loggedIn={loggedIn}
+                      loader={loader}
+                      balance={balance}
+                      identity={identity}
+                      account={
+                        accounts.length > 0 ? accounts[currentAccount] : false
+                      }
+                      logout={logout}
+                      login={login}
+                      collections={collections}
+                      collection={false}
+                      currentAccount={currentAccount}
+                      changeAccount={setCurrentAccount}
+                      accounts={accounts}
+                      buyNft={buyNft}
+                    />
+                  }
+                />
+                <Route
+                  path="/marketplace"
+                  exact
+                  element={
+                    <Marketplace
+                      error={error}
+                      view={"collections"}
+                      alert={alert}
+                      confirm={confirm}
+                      loader={loader}
+                      balance={balance}
+                      identity={identity}
+                      account={
+                        accounts.length > 0 ? accounts[currentAccount] : false
+                      }
+                      logout={logout}
+                      login={login}
+                      collections={collections}
+                      collection={false}
+                      currentAccount={currentAccount}
+                      changeAccount={setCurrentAccount}
+                      accounts={accounts}
+                    />
+                  }
+                />
+                <Route
+                  path="/:address/favorites"
+                  exact
+                  element={
+                    <UserCollection
+                      error={error}
+                      view={"favorites"}
+                      alert={alert}
+                      confirm={confirm}
+                      loggedIn={loggedIn}
+                      loader={loader}
+                      balance={balance}
+                      identity={identity}
+                      account={
+                        accounts.length > 0 ? accounts[currentAccount] : false
+                      }
+                      logout={logout}
+                      login={login}
+                      collections={collections}
+                      collection={false}
+                      currentAccount={currentAccount}
+                      changeAccount={setCurrentAccount}
+                      accounts={accounts}
+                    />
+                  }
+                />
+                <Route
+                  path="/:address/selling"
+                  exact
+                  element={
+                    <UserCollection
+                      error={error}
+                      view={"selling"}
+                      alert={alert}
+                      list={list}
+                      unpackNft={unpackNft}
+                      listNft={listNft}
+                      wrapAndlistNft={wrapAndlistNft}
+                      unwrapNft={unwrapNft}
+                      transferNft={transferNft}
+                      confirm={confirm}
+                      loggedIn={loggedIn}
+                      loader={loader}
+                      balance={balance}
+                      identity={identity}
+                      account={
+                        accounts.length > 0 ? accounts[currentAccount] : false
+                      }
+                      logout={logout}
+                      login={login}
+                      collections={collections}
+                      collection={false}
+                      currentAccount={currentAccount}
+                      changeAccount={setCurrentAccount}
+                      accounts={accounts}
+                    />
+                  }
+                />
+                <Route
+                  path="/:address/offers-made"
+                  exact
+                  element={
+                    <UserCollection
+                      error={error}
+                      view={"offers-made"}
+                      alert={alert}
+                      confirm={confirm}
+                      loggedIn={loggedIn}
+                      loader={loader}
+                      balance={balance}
+                      identity={identity}
+                      account={
+                        accounts.length > 0 ? accounts[currentAccount] : false
+                      }
+                      logout={logout}
+                      login={login}
+                      collections={collections}
+                      collection={false}
+                      currentAccount={currentAccount}
+                      changeAccount={setCurrentAccount}
+                      accounts={accounts}
+                    />
+                  }
+                />
+                <Route
+                  path="/:address/offers-received"
+                  exact
+                  element={
+                    <UserCollection
+                      error={error}
+                      view={"offers-received"}
+                      alert={alert}
+                      list={list}
+                      unpackNft={unpackNft}
+                      listNft={listNft}
+                      wrapAndlistNft={wrapAndlistNft}
+                      unwrapNft={unwrapNft}
+                      transferNft={transferNft}
+                      confirm={confirm}
+                      loggedIn={loggedIn}
+                      loader={loader}
+                      balance={balance}
+                      identity={identity}
+                      account={
+                        accounts.length > 0 ? accounts[currentAccount] : false
+                      }
+                      logout={logout}
+                      login={login}
+                      collections={collections}
+                      collection={false}
+                      currentAccount={currentAccount}
+                      changeAccount={setCurrentAccount}
+                      accounts={accounts}
+                    />
+                  }
+                />
+                <Route
+                  path="/:address/collected"
+                  exact
+                  element={
+                    <UserCollection
+                      error={error}
+                      view={"collected"}
+                      alert={alert}
+                      confirm={confirm}
+                      loggedIn={loggedIn}
+                      unpackNft={unpackNft}
+                      listNft={listNft}
+                      wrapAndlistNft={wrapAndlistNft}
+                      unwrapNft={unwrapNft}
+                      transferNft={transferNft}
+                      loader={loader}
+                      balance={balance}
+                      identity={identity}
+                      account={
+                        accounts.length > 0 ? accounts[currentAccount] : false
+                      }
+                      logout={logout}
+                      login={login}
+                      collections={collections}
+                      collection={false}
+                      currentAccount={currentAccount}
+                      changeAccount={setCurrentAccount}
+                      accounts={accounts}
+                    />
+                  }
+                />
+                <Route
+                  path="/:address/activity"
+                  exact
+                  element={
+                    <UserActivity
+                      error={error}
+                      view={"activity"}
+                      alert={alert}
+                      list={list}
+                      unpackNft={unpackNft}
+                      listNft={listNft}
+                      wrapAndlistNft={wrapAndlistNft}
+                      unwrapNft={unwrapNft}
+                      transferNft={transferNft}
+                      confirm={confirm}
+                      loggedIn={loggedIn}
+                      loader={loader}
+                      balance={balance}
+                      identity={identity}
+                      account={
+                        accounts.length > 0 ? accounts[currentAccount] : false
+                      }
+                      logout={logout}
+                      login={login}
+                      collections={collections}
+                      collection={false}
+                      currentAccount={currentAccount}
+                      changeAccount={setCurrentAccount}
+                      accounts={accounts}
+                    />
+                  }
+                />
+
+                <Route
+                  path="/favorites"
+                  exact
+                  element={
+                    <UserCollection
+                      error={error}
+                      view={"favorites"}
+                      alert={alert}
+                      confirm={confirm}
+                      loggedIn={loggedIn}
+                      loader={loader}
+                      balance={balance}
+                      identity={identity}
+                      account={
+                        accounts.length > 0 ? accounts[currentAccount] : false
+                      }
+                      logout={logout}
+                      login={login}
+                      collections={collections}
+                      collection={false}
+                      currentAccount={currentAccount}
+                      changeAccount={setCurrentAccount}
+                      accounts={accounts}
+                    />
+                  }
+                />
+                <Route
+                  path="/selling"
+                  exact
+                  element={
+                    <UserCollection
+                      error={error}
+                      view={"selling"}
+                      alert={alert}
+                      list={list}
+                      unpackNft={unpackNft}
+                      listNft={listNft}
+                      wrapAndlistNft={wrapAndlistNft}
+                      unwrapNft={unwrapNft}
+                      transferNft={transferNft}
+                      confirm={confirm}
+                      loggedIn={loggedIn}
+                      loader={loader}
+                      balance={balance}
+                      identity={identity}
+                      account={
+                        accounts.length > 0 ? accounts[currentAccount] : false
+                      }
+                      logout={logout}
+                      login={login}
+                      collections={collections}
+                      collection={false}
+                      currentAccount={currentAccount}
+                      changeAccount={setCurrentAccount}
+                      accounts={accounts}
+                    />
+                  }
+                />
+                <Route
+                  path="/offers-made"
+                  exact
+                  element={
+                    <UserCollection
+                      error={error}
+                      view={"offers-made"}
+                      alert={alert}
+                      confirm={confirm}
+                      loggedIn={loggedIn}
+                      loader={loader}
+                      balance={balance}
+                      identity={identity}
+                      account={
+                        accounts.length > 0 ? accounts[currentAccount] : false
+                      }
+                      logout={logout}
+                      login={login}
+                      collections={collections}
+                      collection={false}
+                      currentAccount={currentAccount}
+                      changeAccount={setCurrentAccount}
+                      accounts={accounts}
+                    />
+                  }
+                />
+                <Route
+                  path="/offers-received"
+                  exact
+                  element={
+                    <UserCollection
+                      error={error}
+                      view={"offers-received"}
+                      alert={alert}
+                      list={list}
+                      unpackNft={unpackNft}
+                      listNft={listNft}
+                      wrapAndlistNft={wrapAndlistNft}
+                      unwrapNft={unwrapNft}
+                      transferNft={transferNft}
+                      confirm={confirm}
+                      loggedIn={loggedIn}
+                      loader={loader}
+                      balance={balance}
+                      identity={identity}
+                      account={
+                        accounts.length > 0 ? accounts[currentAccount] : false
+                      }
+                      logout={logout}
+                      login={login}
+                      collections={collections}
+                      collection={false}
+                      currentAccount={currentAccount}
+                      changeAccount={setCurrentAccount}
+                      accounts={accounts}
+                    />
+                  }
+                />
+                <Route
+                  path="/collected"
+                  exact
+                  element={
+                    <UserCollection
+                      error={error}
+                      view={"collected"}
+                      alert={alert}
+                      confirm={confirm}
+                      loggedIn={loggedIn}
+                      unpackNft={unpackNft}
+                      listNft={listNft}
+                      wrapAndlistNft={wrapAndlistNft}
+                      unwrapNft={unwrapNft}
+                      transferNft={transferNft}
+                      loader={loader}
+                      balance={balance}
+                      identity={identity}
+                      account={
+                        accounts.length > 0 ? accounts[currentAccount] : false
+                      }
+                      logout={logout}
+                      login={login}
+                      collections={collections}
+                      collection={false}
+                      currentAccount={currentAccount}
+                      changeAccount={setCurrentAccount}
+                      accounts={accounts}
+                    />
+                  }
+                />
+                <Route
+                  path="/activity"
+                  exact
+                  element={
+                    <UserActivity
+                      error={error}
+                      view={"activity"}
+                      alert={alert}
+                      list={list}
+                      unpackNft={unpackNft}
+                      listNft={listNft}
+                      wrapAndlistNft={wrapAndlistNft}
+                      unwrapNft={unwrapNft}
+                      transferNft={transferNft}
+                      confirm={confirm}
+                      loggedIn={loggedIn}
+                      loader={loader}
+                      balance={balance}
+                      identity={identity}
+                      account={
+                        accounts.length > 0 ? accounts[currentAccount] : false
+                      }
+                      logout={logout}
+                      login={login}
+                      collections={collections}
+                      collection={false}
+                      currentAccount={currentAccount}
+                      changeAccount={setCurrentAccount}
+                      accounts={accounts}
+                    />
+                  }
+                />
+                <Route
+                  path="/sale/DfinityDeckElements"
+                  exact
+                  element={
+                    <DfinityDeckSaleComponent
+                      error={error}
+                      view={"sale"}
+                      alert={alert}
+                      confirm={confirm}
+                      loader={loader}
+                      balance={balance}
+                      identity={identity}
+                      account={
+                        accounts.length > 0 ? accounts[currentAccount] : false
+                      }
+                      logout={logout}
+                      login={login}
+                      collections={collections}
+                      collection={false}
+                      currentAccount={currentAccount}
+                      changeAccount={setCurrentAccount}
+                      accounts={accounts}
+                    />
+                  }
+                />
+                <Route
+                  path="/sale/:route"
+                  exact
+                  element={
+                    <GeneralSaleComponent
+                      error={error}
+                      view={"sale"}
+                      alert={alert}
+                      confirm={confirm}
+                      loader={loader}
+                      balance={balance}
+                      identity={identity}
+                      account={
+                        accounts.length > 0 ? accounts[currentAccount] : false
+                      }
+                      logout={logout}
+                      login={login}
+                      collections={collections}
+                      collection={false}
+                      currentAccount={currentAccount}
+                      changeAccount={setCurrentAccount}
+                      accounts={accounts}
+                    />
+                  }
+                />
+                <Route
+                  path="/mint"
+                  exact
+                  element={
+                    <Mint
+                      error={error}
+                      alert={alert}
+                      confirm={confirm}
+                      loader={loader}
+                      address={address}
+                      balance={balance}
+                      identity={identity}
+                      account={
+                        accounts.length > 0 ? accounts[currentAccount] : false
+                      }
+                      logout={logout}
+                      login={login}
+                      collections={collections}
+                      collection={false}
+                      currentAccount={currentAccount}
+                      changeAccount={setCurrentAccount}
+                      accounts={accounts}
+                    />
+                  }
+                />
+                <Route
+                  path="/create"
+                  exact
+                  element={
+                    <Create
+                      error={error}
+                      alert={alert}
+                      confirm={confirm}
+                      loader={loader}
+                      balance={balance}
+                      identity={identity}
+                      account={
+                        accounts.length > 0 ? accounts[currentAccount] : false
+                      }
+                      logout={logout}
+                      login={login}
+                      collections={collections}
+                      collection={false}
+                      currentAccount={currentAccount}
+                      changeAccount={setCurrentAccount}
+                      accounts={accounts}
+                    />
+                  }
+                />
+                {/* <Route path="/contact" exact element={
                 <Contact
                   error={error}
                   error={error}
@@ -935,47 +1294,106 @@ export default function App() {
                   confirm={confirm}
                   loader={loader} setBalance={setBalance} identity={identity}  account={accounts.length > 0 ? accounts[currentAccount] : false} logout={logout} login={login} collections={collections} collection={false} currentAccount={currentAccount} changeAccount={setCurrentAccount} accounts={accounts}
                 />} /> */}
-              <Route path="/" exact element={
-                <Home collections={collections} error={error} alert={alert} confirm={confirm} loader={loader} />} />
-              <Route path="/sale" exact element={
-                <Sale 
-                  error={error}
-                  view={"sale"}
-                  alert={alert}
-                  confirm={confirm}
-                  loader={loader} balance={balance} identity={identity}  account={accounts.length > 0 ? accounts[currentAccount] : false} logout={logout} login={login} collections={collections} collection={false} currentAccount={currentAccount} changeAccount={setCurrentAccount} accounts={accounts}
-                />} />
-            </Routes>
-            <BuyForm open={showBuyForm} {...buyFormData} />
-            <TransferForm refresher={refresher} buttonLoader={buttonLoader} transfer={transfer} alert={alert} open={openTransferForm} close={closeTransferForm} loader={loader} error={error} nft={tokenNFT} />
-            <ListingForm refresher={refresher} buttonLoader={buttonLoader} collections={collections} list={list} alert={alert} open={openListingForm} close={closeListingForm} loader={loader} error={error} nft={tokenNFT} />
-            <Opener alert={alert} nft={tokenNFT} identity={identity} currentAccount={currentAccount} open={playOpener} onEnd={closeUnpackNft} />
-          </div>
-        </main>
-        {footer}
-        
-        <Backdrop className={classes.backdrop} open={loaderOpen}>
-          <CircularProgress color="inherit" />
-          <h2 style={{ position: "absolute", marginTop: "120px" }}>
-            {loaderText ?? "Loading..."}
-          </h2>
-        </Backdrop>
-        <AlertDialog
-          open={showAlert}
-          title={alertData.title}
-          message={alertData.message}
-          buttonLabel={alertData.buttonLabel}
-          handler={alertData.handler}
-        />
-        <ConfirmDialog
-          open={showConfirm}
-          title={confirmData.title}
-          message={confirmData.message}
-          buttonCancel={confirmData.buttonCancel}
-          buttonConfirm={confirmData.buttonConfirm}
-          handler={confirmData.handler}
-        />
-      </>:""}
+                <Route
+                  path="/"
+                  exact
+                  element={
+                    <Home
+                      collections={collections}
+                      error={error}
+                      alert={alert}
+                      confirm={confirm}
+                      loader={loader}
+                    />
+                  }
+                />
+                <Route
+                  path="/sale"
+                  exact
+                  element={
+                    <Sale
+                      error={error}
+                      view={"sale"}
+                      alert={alert}
+                      confirm={confirm}
+                      loader={loader}
+                      balance={balance}
+                      identity={identity}
+                      account={
+                        accounts.length > 0 ? accounts[currentAccount] : false
+                      }
+                      logout={logout}
+                      login={login}
+                      collections={collections}
+                      collection={false}
+                      currentAccount={currentAccount}
+                      changeAccount={setCurrentAccount}
+                      accounts={accounts}
+                    />
+                  }
+                />
+              </Routes>
+              <BuyForm open={showBuyForm} {...buyFormData} />
+              <TransferForm
+                refresher={refresher}
+                buttonLoader={buttonLoader}
+                transfer={transfer}
+                alert={alert}
+                open={openTransferForm}
+                close={closeTransferForm}
+                loader={loader}
+                error={error}
+                nft={tokenNFT}
+              />
+              <ListingForm
+                refresher={refresher}
+                buttonLoader={buttonLoader}
+                collections={collections}
+                list={list}
+                alert={alert}
+                open={openListingForm}
+                close={closeListingForm}
+                loader={loader}
+                error={error}
+                nft={tokenNFT}
+              />
+              <Opener
+                alert={alert}
+                nft={tokenNFT}
+                identity={identity}
+                currentAccount={currentAccount}
+                open={playOpener}
+                onEnd={closeUnpackNft}
+              />
+            </div>
+          </main>
+          {footer}
+
+          <Backdrop className={classes.backdrop} open={loaderOpen}>
+            <CircularProgress color="inherit" />
+            <h2 style={{ position: "absolute", marginTop: "120px" }}>
+              {loaderText ?? "Loading..."}
+            </h2>
+          </Backdrop>
+          <AlertDialog
+            open={showAlert}
+            title={alertData.title}
+            message={alertData.message}
+            buttonLabel={alertData.buttonLabel}
+            handler={alertData.handler}
+          />
+          <ConfirmDialog
+            open={showConfirm}
+            title={confirmData.title}
+            message={confirmData.message}
+            buttonCancel={confirmData.buttonCancel}
+            buttonConfirm={confirmData.buttonConfirm}
+            handler={confirmData.handler}
+          />
+        </>
+      ) : (
+        ""
+      )}
     </>
   );
 }
